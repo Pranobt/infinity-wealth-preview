@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infinity Wealth Management</title>
+<meta name="description" content="Money advice in plain English for Indian families and NRIs. Three calls, the same person. Book a call with Infinity Wealth Management.">
+<meta name="theme-color" content="#032F14">
+<meta name="robots" content="noindex, nofollow"><!-- preview only: remove when the site goes live -->
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Inter+Tight:wght@500..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+// Motion is opt-in: only when the user has no reduced-motion preference. If the animation scripts never load, show everything.
+if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  document.documentElement.classList.add('motion');
+  setTimeout(() => { if (!window.motionReady) document.documentElement.classList.remove('motion'); }, 3000);
+}
+// Images live in assets/images/ as <name>-v1 / <name>-v2. A slot shows v1, falls back to v2, and shows a soft placeholder until a file exists.
+document.addEventListener('error', (e) => {
+  const img = e.target;
+  if (img.tagName !== 'IMG' || !img.closest('[data-slot]')) return;
+  if (/-v1\.\w+$/.test(img.src)) img.src = img.src.replace(/-v1(\.\w+)$/, '-v2$1'); // try the other variant
+  else img.remove();
+}, true);
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Infinity Wealth Management, home"><img class="mark" src="assets/mark-shadow.svg" alt="" width="831" height="821"><span>Infinity</span></a>
+  <ul class="nav__links">
+    <li><a href="#help">What we do</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#fees">Fees</a></li>
+    <li><a href="#faq">Questions</a></li>
+  </ul>
+  <a class="btn btn--ink btn--sm" href="#book">Book a call</a>
+</header>
+
+<main id="main">
+
+  <!-- 1 NAV AND HERO -->
+  <section class="hero" id="top">
+    <div class="hero__bg" data-slot aria-hidden="true">
+      <img src="assets/images/hero-bg-a-v1.jpg" alt="" width="1536" height="1024" fetchpriority="high">
+    </div>
+
+
+    <div class="hero__copy">
+      <h1 data-split>Let's sort out your <span class="hl">money.</span></h1>
+      <p class="lead" data-anim>Where it comes from. Where it goes. What to do next. We'll go through it with you, one call at a time.</p>
+      <div class="acts" data-anim>
+        <a class="btn btn--leaf" href="#book">Book a call</a>
+        <a class="btn btn--ghost" href="#how">How it works</a>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="mini mini--left" aria-hidden="true">
+        <p class="mini__t">Your money picture <span class="tagchip">Sample</span></p>
+        <div class="bars"><i style="--w:72%"></i><i style="--w:48%"></i><i style="--w:30%"></i></div>
+        <p class="mini__s">Income, spending, goals</p>
+      </div>
+      <div class="stage__main" data-slot data-free>
+        <img src="assets/images/hero-card-v1.png" alt="A sample plan screen with a rising chart and progress bars. Illustration only." width="1536" height="1024">
+        <div class="dash" aria-hidden="true">
+          <div class="dash__top"><img class="mark" src="assets/mark-leaf.svg" alt="" width="831" height="821"><span class="tagchip tagchip--dark">Sample plan</span></div>
+          <svg class="dash__chart" viewBox="0 0 300 90" preserveAspectRatio="none"><path d="M0 78 C 40 74, 60 60, 95 58 S 150 40, 190 36 S 250 14, 300 8" fill="none" stroke="#89C138" stroke-width="3" stroke-linecap="round"/><path d="M0 78 C 40 74, 60 60, 95 58 S 150 40, 190 36 S 250 14, 300 8 V 90 H 0 Z" fill="#89C138" opacity=".12"/></svg>
+          <div class="dash__rows"><i style="--w:80%"></i><i style="--w:56%"></i><i style="--w:68%"></i></div>
+        </div>
+      </div>
+      <div class="mini mini--right" aria-hidden="true">
+        <p class="mini__t">Next review</p>
+        <p class="mini__s">Booked with your adviser</p>
+        <span class="okchip">Booked</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 ABOUT -->
+  <section class="sec" aria-labelledby="about-h">
+    <div class="container">
+      <h2 id="about-h" class="statement" data-scrub>Infinity helps Indian families and NRIs make <span class="hl hl--scrub">better money decisions.</span> <span>We look at your cash flow, build a plan, and keep checking it as life changes.</span></h2>
+      <div class="bento" data-stagger>
+        <figure class="bento__photo" data-slot>
+          <img src="assets/images/about-photo-v1.jpg" alt="Someone at a table by a window, going through their finances on a phone" width="1024" height="1536" loading="lazy">
+          <span class="ghost" aria-hidden="true"><img class="mark" src="assets/mark-shadow.svg" alt="" width="831" height="821"></span>
+        </figure>
+        <div class="card bento__private">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8.3 7 9.5 4-1.2 7-5.1 7-9.5V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div>
+            <h3>Private by default</h3>
+            <p>Your finances stay between you and us. Confidentiality is the core of how we work.</p>
+          </div>
+        </div>
+        <div class="card card--ink bento__cta">
+          <img class="mark mark--lg" src="assets/mark-leaf.svg" alt="" width="831" height="821">
+          <div>
+            <p class="bento__line">Got a minute? Let's talk.</p>
+            <a class="btn btn--leaf" href="#book">Book a call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 WHO IT'S FOR -->
+  <section class="sec" aria-labelledby="who-h">
+    <div class="container feat">
+      <div>
+        <h2 id="who-h" data-split>Whether you're in Pune or Perth.</h2>
+        <ul class="list" data-stagger>
+          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><div><h3>Living in India?</h3><p>We start with your cash flow and build from there.</p></div></li>
+          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 12h16M12 4c2.5 2.3 3.6 5 3.6 8s-1.1 5.7-3.6 8c-2.5-2.3-3.6-5-3.6-8S9.5 6.3 12 4z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><div><h3>Living abroad?</h3><p>Time zones are our problem, not yours.</p></div></li>
+          <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 4 8 4-8 4-8-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m4 12 8 4 8-4M4 16l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><div><h3>Something complicated?</h3><p>Family office set up, a stack of cards, loans in two countries. We'll work it out.</p></div></li>
+        </ul>
+        <a class="btn btn--ink" href="#book">Talk to us</a>
+      </div>
+      <div class="feat__art" data-slot data-free data-anim>
+        <img src="assets/images/who-card-v1.png" alt="A sample account list with three rows. Illustration only." width="1024" height="1024" loading="lazy">
+        <div class="ui" aria-hidden="true">
+          <div class="ui__row"><span>Home loan</span><span class="tagchip">Sample</span></div>
+          <div class="ui__row"><span>Credit cards</span><span class="tagchip">Sample</span></div>
+          <div class="ui__row"><span>Savings</span><span class="tagchip">Sample</span></div>
+          <div class="ui__chip"><img class="mark" src="assets/mark-leaf.svg" alt="" width="831" height="821">Plan insight</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 WHAT WE DO -->
+  <section class="sec" id="help" aria-labelledby="help-h">
+    <div class="container">
+      <div class="head">
+        <h2 id="help-h" data-split>Six things we sort out.</h2>
+        <p class="lead">In the order you'll meet them.</p>
+      </div>
+      <ol class="three" data-stagger>
+        <li class="card tcard"><div class="tcard__img" data-slot><img src="assets/images/thumb-1-v1.jpg" alt="" width="1536" height="1024" loading="lazy"></div><h3>Where does it all go?</h3><p>We start with income and spending. No product talk yet.</p></li>
+        <li class="card tcard"><div class="tcard__img" data-slot><img src="assets/images/thumb-2-v1.jpg" alt="" width="1536" height="1024" loading="lazy"></div><h3>Build the base</h3><p>The core of your plan, so everything else has something to stand on.</p></li>
+        <li class="card tcard"><div class="tcard__img" data-slot><img src="assets/images/thumb-3-v1.jpg" alt="" width="1536" height="1024" loading="lazy"></div><h3>Protect what you've built</h3><p>Growth only helps if it survives a bad year.</p></li>
+        <li class="card tcard"><div class="tcard__img" data-slot><img src="assets/images/thumb-4-v1.jpg" alt="" width="1536" height="1024" loading="lazy"></div><h3>Tax, without the March panic</h3><p>We plan for it during the year, not at the deadline.</p></li>
+        <li class="card tcard"><div class="tcard__img" data-slot><img src="assets/images/thumb-5-v1.jpg" alt="" width="1536" height="1024" loading="lazy"></div><h3>Loans and credit cards</h3><p>What to keep, what to clear, and what your cards should be doing for you.</p></li>
+        <li class="card tcard"><div class="tcard__img" data-slot><img src="assets/images/thumb-6-v1.jpg" alt="" width="1536" height="1024" loading="lazy"></div><h3>We check in. You don't chase.</h3><p>Regular reviews, on our side of the table.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5 HOW IT WORKS -->
+  <section class="sec" id="how" aria-labelledby="how-h">
+    <div class="container">
+      <div class="head">
+        <h2 id="how-h" data-split>Three calls. <span class="hl">Undivided attention.</span></h2>
+        <p class="lead">All with the same person, so you never have to explain yourself twice.</p>
+      </div>
+      <div class="calls" data-stagger>
+        <div class="card">
+          <p class="eyebrow">Your calls</p>
+          <ol class="sched">
+            <li><b>1</b><div><h3>Intro</h3><p>You tell us what you want. We tell you how we work.</p></div></li>
+            <li><b>2</b><div><h3>Discovery</h3><p>We go through your money in detail: what comes in, what goes out, what you own and what you owe.</p></div></li>
+            <li><b>3</b><div><h3>Walkthrough</h3><p>We show you the plan in plain English, and what happens next.</p></div></li>
+          </ol>
+        </div>
+        <div class="card card--ink calls__cta">
+          <p class="eyebrow eyebrow--leaf">The first step</p>
+          <div>
+            <p class="calls__line">All you have to do is book the first one.</p>
+            <a class="btn btn--leaf" href="#book">Book a call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 VALUES -->
+  <section class="sec sec--ink" id="values" aria-labelledby="values-h">
+    <div class="container">
+      <div class="head head--dark">
+        <h2 id="values-h" data-split>What you can <span class="hl">count on.</span></h2>
+        <p class="lead">Three promises behind every call, every plan and every review.</p>
+      </div>
+      <ol class="values" data-stagger>
+        <li><span class="values__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/></svg></span><h3>Your goals before any product.</h3><p>We understand your whole money picture first. What we suggest comes from your plan, never the other way round.</p></li>
+        <li><span class="values__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 20c.8-3.6 3.6-5.6 7-5.6s6.2 2 7 5.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>One person, start to finish.</h3><p>The same person takes your intro, discovery and walkthrough calls. You build the relationship once.</p></li>
+        <li><span class="values__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 20.5a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>We come to you.</h3><p>When life or the markets change, we reach out first. Your plan never waits for you to ask.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7 FEES -->
+  <section class="sec sec--tight" id="fees" aria-labelledby="fees-h">
+    <div class="container">
+      <div class="card card--cream fees" data-anim>
+        <div>
+          <p class="eyebrow">What it costs</p>
+          <h2 id="fees-h" data-split>We explain our fee on the <span class="hl">first call.</span></h2>
+        </div>
+        <p class="lead">Before you decide anything, you'll know exactly what you pay and what you get for it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 FAQ -->
+  <section class="sec" id="faq" aria-labelledby="faq-h">
+    <div class="container faq">
+      <div>
+        <h2 id="faq-h" data-split>Questions you might have.</h2>
+        <p class="lead">Not here? Ask us on a call.</p>
+      </div>
+      <div class="faq__list" data-stagger>
+        <details open><summary>What is Infinity?</summary><p>We help Indian families and NRIs plan, invest and review their money.</p></details>
+        <details><summary>But what exactly do you do?</summary><p>We look at your whole money picture, build a plan with you, and keep reviewing it as things change.</p></details>
+        <details><summary>Do you work with people outside India?</summary><p>Yes. We work with families in India and abroad, across time zones.</p></details>
+        <details><summary>Is my information safe with you?</summary><p>Yes. Confidentiality is the core of how we work. Your details are used for your plan and nothing else.</p></details>
+        <details><summary>Why pay for advice when I could invest on my own?</summary><p>You can invest on your own. What we add is the whole picture: cash flow, tax, loans, cards and protection planned together, and someone who keeps checking it as your life changes.</p></details>
+        <details><summary>Can you look at investments I already have?</summary><p>Yes. That is part of the discovery call. We go through what you already own before we suggest anything new.</p></details>
+        <details><summary>How are you different from an investing app?</summary><p>An app can pick funds. It cannot sit with you through a home loan decision, a move abroad or a bad year in the markets. We plan the whole picture, and a real person stays with you.</p></details>
+        <details><summary>How often will we review my plan?</summary><p>Regularly, and whenever something big changes, like a new job, a move or a new child. We agree the rhythm with you on the walkthrough call.</p></details>
+        <details><summary>Do we meet online or in person?</summary><p>Our calls happen online, so it works wherever you live, in India or abroad.</p></details>
+        <details><summary>How do I get started?</summary><p>Book a call below. We'll get back to you to fix a time.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 BOOK -->
+  <section class="sec" id="book" aria-labelledby="book-h">
+    <div class="container">
+      <div class="final">
+        <div class="final__copy">
+          <h2 id="book-h" data-split>Ready when you are.</h2>
+          <p class="lead">Tell us a little. We'll get back to you to fix a time for your intro call.</p>
+          <ul class="facts">
+            <li><span>Email</span><span class="fill" data-fill="email">to be added</span></li>
+            <li><span>Phone</span><span class="fill" data-fill="phone">to be added</span></li>
+          </ul>
+        </div>
+        <form class="form card" data-endpoint="" novalidate>
+          <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="where">Where are you based?</label><input id="where" name="where" autocomplete="address-level2" placeholder="City, country"></div>
+          <div class="field"><label for="help-me">What would you like help with?</label><textarea id="help-me" name="message"></textarea></div>
+          <button class="btn btn--ink" type="submit">Book a call</button>
+          <p class="form__help" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <p class="mast"><img class="mark" src="assets/mark-shadow.svg" alt="" width="831" height="821">Infinity Wealth Management</p>
+    <ul class="foot__links">
+      <li><a href="#help">What we do</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#fees">Fees</a></li>
+      <li><a href="#faq">Questions</a></li>
+      <li><a href="#book">Contact</a></li>
+    </ul>
+    <p class="foot__disc"><span class="fill" data-fill="disclaimer">Disclaimer to be added</span></p>
+    <div class="foot__legal"><span><span class="fill" data-fill="registration">SEBI registration details will appear here once received</span></span><span>© <span data-year>2026</span> Infinity Wealth Management</span></div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+document.querySelectorAll('form[data-endpoint]').forEach((form) => {
+  const help = form.querySelector('.form__help'), email = form.querySelector('input[type="email"]'), name = form.querySelector('input[name="name"]');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const bad = [name, email].filter((i) => !i.checkValidity());
+    [name, email].forEach((i) => i.toggleAttribute('aria-invalid', !i.checkValidity()));
+    if (bad.length) { help.textContent = 'Please add your name and a valid email address.'; bad[0].focus(); return; }
+    if (!form.dataset.endpoint) { help.textContent = 'Nothing was sent: this form is not connected yet.'; return; }
+    fetch(form.dataset.endpoint, { method: 'POST', body: new FormData(form) })
+      .then((r) => { help.textContent = r.ok ? 'Thanks. We will be in touch to fix a time.' : 'That did not go through. Try again in a minute.'; })
+      .catch(() => { help.textContent = 'That did not go through. Try again in a minute.'; });
+  });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+<script src="motion.js" defer></script>
+</body>
+</html>
