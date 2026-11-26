@@ -19,7 +19,9 @@
 
   // Line masks are one line-box tall, and the headings' tight line height would clip descenders (g, y, p).
   // Extend each mask downwards and pull the next line back up, so nothing is cut and the layout doesn't move.
-  const roomy = (split) => { (split.masks || []).forEach((m) => { m.style.paddingBottom = '0.2em'; m.style.marginBottom = '-0.2em'; }); return split; };
+  // Once a heading has animated in, remove the split wrappers so nothing can clip it at rest. .is-done keeps its highlight on.
+  const settle = (el, split) => () => { split.revert(); el.classList.add('is-done'); };
+  const roomy = (split) => { (split.masks || []).forEach((m) => { m.style.paddingBottom = '0.25em'; m.style.marginBottom = '-0.25em'; }); return split; };
 
   // Split text only after Inter has loaded, so line breaks are measured with the real font.
   document.fonts.ready.then(() => {
@@ -29,9 +31,10 @@
     const heroSplit = roomy(SplitText.create(h1, { type: 'lines,words', mask: 'lines' }));
     gsap.set(h1, { autoAlpha: 1 });
     const intro = gsap.timeline({ defaults: { ease } });
+    const settleHero = settle(h1, heroSplit);
     intro
       .from(heroSplit.words, { yPercent: 110, duration: 1, stagger: 0.07, ease: 'expo.out' })
-      .to('.hero .hl', { backgroundSize: '100% 100%', duration: 0.7, ease: 'power2.inOut' }, '-=0.35')
+      .to('.hero .hl', { backgroundSize: '100% 100%', duration: 0.7, ease: 'power2.inOut', onComplete: settleHero }, '-=0.35')
       .fromTo('.hero [data-anim]', { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.8, stagger: 0.1 }, '<-0.2')
       .fromTo('.stage__main', { autoAlpha: 0, y: 90, scale: 0.96 }, { autoAlpha: 1, y: 0, scale: 1, duration: 1.2, ease: 'expo.out' }, '-=0.5')
       .fromTo('.mini', { autoAlpha: 0, y: 40 }, { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.12 }, '-=0.9');
@@ -61,7 +64,7 @@
     document.querySelectorAll('[data-split]:not(.hero h1)').forEach((el) => {
       const split = roomy(SplitText.create(el, { type: 'lines', mask: 'lines' }));
       gsap.set(el, { autoAlpha: 1 });
-      const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 96%', once: true } });
+      const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 96%', once: true }, onComplete: settle(el, split) });
       tl.from(split.lines, { yPercent: 105, duration: 0.8, stagger: 0.08, ease: 'expo.out' });
       const hl = el.querySelector('.hl');
       if (hl) tl.to(hl, { backgroundSize: '100% 100%', duration: 0.7, ease: 'power2.inOut' }, '-=0.45');

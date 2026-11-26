@@ -28,6 +28,7 @@ a { text-decoration-color: var(--color-rule-2); }
 /* highlighter marker behind key words; motion.js sweeps it in */
 .hl { padding-inline: 0.06em; background: linear-gradient(transparent 60%, rgb(137 193 56 / 0.55) 60%, rgb(137 193 56 / 0.55) 92%, transparent 92%) no-repeat 0 0 / 100% 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .motion .hl { background-size: 0% 100%; }
+.motion .is-done .hl { background-size: 100% 100%; }
 
 /* starting states, only when motion is allowed (html.motion is set in <head>); GSAP reveals them */
 .motion [data-split], .motion [data-anim], .motion [data-stagger] > *, .motion .stage > * { visibility: hidden; }
