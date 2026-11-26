@@ -1,0 +1,7 @@
+# PREVIEW: this blocks all search engines. At launch replace the two lines below with:
+#   User-agent: *
+#   Allow: /
+User-agent: *
+Disallow: /
+
+Sitemap: https://pranobt.github.io/infinity-wealth-preview/sitemap.xml
