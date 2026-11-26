@@ -17,12 +17,16 @@
   gsap.registerPlugin(ScrollTrigger, SplitText);
   const ease = 'power3.out';
 
+  // Line masks are one line-box tall, and the headings' tight line height would clip descenders (g, y, p).
+  // Extend each mask downwards and pull the next line back up, so nothing is cut and the layout doesn't move.
+  const roomy = (split) => { (split.masks || []).forEach((m) => { m.style.paddingBottom = '0.2em'; m.style.marginBottom = '-0.2em'; }); return split; };
+
   // Split text only after Inter has loaded, so line breaks are measured with the real font.
   document.fonts.ready.then(() => {
 
     // 1. Hero: headline rises word by word out of a line mask, then the copy, the buttons and the cards.
     const h1 = document.querySelector('.hero h1');
-    const heroSplit = SplitText.create(h1, { type: 'lines,words', mask: 'lines' });
+    const heroSplit = roomy(SplitText.create(h1, { type: 'lines,words', mask: 'lines' }));
     gsap.set(h1, { autoAlpha: 1 });
     const intro = gsap.timeline({ defaults: { ease } });
     intro
@@ -55,7 +59,7 @@
 
     // 3. Section headings: lines rise out of a mask, then any highlight sweeps in.
     document.querySelectorAll('[data-split]:not(.hero h1)').forEach((el) => {
-      const split = SplitText.create(el, { type: 'lines', mask: 'lines' });
+      const split = roomy(SplitText.create(el, { type: 'lines', mask: 'lines' }));
       gsap.set(el, { autoAlpha: 1 });
       const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 96%', once: true } });
       tl.from(split.lines, { yPercent: 105, duration: 0.8, stagger: 0.08, ease: 'expo.out' });
